@@ -940,3 +940,249 @@ a:focus {
   background: #7892ff;
   border-radius: 5px;
 }
+
+/* ===== Стили rightnow ===== */
+.rightnow {
+  padding: 140px 0;
+  background: linear-gradient(97.4deg, #CCA5FF 0%, #A1ABFF 48.96%, #60B4FF 100%), #C4C4C4;
+}
+
+.rightnow__wrapper {
+  max-width: 1136px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.rightnow__item:first-child {
+  width: 33.45%;
+  align-self: center;
+  margin-right: 10.47%;
+}
+.rightnow__item:last-child {
+  width: 56.07%;
+  padding: 12px;
+  background: #C4C4C4, linear-gradient(180deg, rgba(225, 230, 252, 0.448) 0%, rgba(196, 211, 255, 0.056) 100%);
+  box-shadow: -8px -4px 16px #ACB0FF, 8px 4px 18px #76A5FF;
+  border-radius: 5px;
+}
+.rightnow__item:last-child img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.rightnow__title {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.rightnow__subtitle {
+  margin-bottom: 60px;
+  color: #fff;
+  text-align: left;
+}
+
+.rigthnow__name,
+.rigthnow__phone {
+  position: relative;
+}
+.rigthnow__name::after,
+.rigthnow__phone::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.rigthnow__name {
+  margin-bottom: 40px;
+}
+
+.rigthnow__phone {
+  margin-bottom: 50px;
+}
+
+.rigthnow__name input,
+.rigthnow__phone input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-family: "Gilroy", sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  color: #f2f2f2;
+}
+.rigthnow__name input::placeholder,
+.rigthnow__phone input::placeholder {
+  color: #f2f2f2;
+}
+
+.rightnow__btn {
+  width: 100%;
+}
+.rightnow__btn:hover, .rightnow__btn:focus {
+  color: #fff;
+  background-color: #7892ff;
+}
+
+/* ===== Стили footer ===== */
+.footer {
+  padding: 140px 0;
+  padding-bottom: 0;
+}
+
+.footer__info {
+  background-color: #f8fbff;
+}
+
+.footer__infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footer__logo {
+  width: 15.25%;
+  margin-right: 10.17%;
+}
+.footer__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer__services {
+  width: 8.47%;
+  margin-right: 8.47%;
+}
+
+.footer__subtitle {
+  color: #000;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.footer__link {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  line-height: 16px;
+}
+.footer__link:last-child {
+  margin-bottom: 0;
+}
+
+.footer__about {
+  width: 7.78%;
+  margin-right: 9.17%;
+}
+
+.footer__contacts {
+  width: 16.25%;
+  margin-right: 9.17%;
+}
+
+.footer__tel,
+.footer__mode {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.footer__mode {
+  margin-bottom: 30px;
+}
+
+.footer__tel a,
+.footer__mode p {
+  margin: 0;
+  line-height: 16px;
+  text-align: left;
+}
+
+.footer__telImg,
+.footer__modeImg {
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+}
+.footer__telImg img,
+.footer__modeImg img {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__modeImg {
+  width: 11px;
+  height: 11px;
+  margin-right: 11px;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__socialItem {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 17px;
+  background-color: #7892ff;
+  border-radius: 50%;
+}
+.footer__socialItem:last-child {
+  margin-right: 0;
+}
+.footer__socialItem a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.footer__company {
+  width: 15.25%;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.footer__devInfo {
+  background: linear-gradient(97.4deg, #CCA5FF 0%, #A1ABFF 48.96%, #60B4FF 100%), #C4C4C4;
+  padding: 15px 0;
+}
+
+.footer__devInfoWrapper,
+.footer__other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__devCompany,
+.footer__politics,
+.footer__copyright {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #fff;
+}
+
+.footer__devCompany strong {
+  font-weight: 700;
+}
+
+.footer__politics {
+  margin-right: 60px;
+}
