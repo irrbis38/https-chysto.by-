@@ -79,6 +79,8 @@ $bg-btn-dark: #7892ff;
 
 $block-padding: 140px 0;
 
+$container-width: 1200px;
+
 
 
 
@@ -108,7 +110,7 @@ a {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: $container-width - 20px;
 	margin: 0 auto;
 	padding: 0 10px;
 }
@@ -165,18 +167,196 @@ a {
 
 
 
+/* ===== Анимация ===== */
+
+// Движение левого шара в header
+
+@keyframes headerLeftBall {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(5%, 10%);
+	}
+	50% {
+		transform: translate(0, 5%);
+	}
+	75% {
+		transform: translate(5%, -5%);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+// Движение правого шара в header
+
+@keyframes headerRightBall {
+	0% {
+	transform:  translate(0, 0)  ;
+	}
+	10% {
+	transform:  translate(-5%, -5%)  ;
+	}
+	20% {
+	transform:  translate(-10%,0)  ;
+	}
+	30% {
+	transform:  translate(-15%,-5%)  ;
+	}
+	40% {
+	transform:  translate(-10%,-10%)  ;
+	}
+	50% {
+	transform:  translate(-5%, -5%)  ;
+	}
+	60% {
+	transform:  translate(0, 0)  ;
+	}
+	70% {
+	transform:  translate(5%, 5%)  ;
+	}
+	80% {
+	transform:  translate(0, 10%)  ;
+	}
+	90% {
+	transform:  translate(-5%, 5%)  ;
+	}
+	100% {
+	transform:  translate(0, 0)  ;
+	}
+}
+
+// Анимация тряски
+@keyframes shake {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+
 /* ===== Стили header ===== */
 
 .header {
 	position: relative;
+	overflow: hidden;
 	width: 100%;
 	height: 100vh;
+	min-height: 100vh;
 	padding-top: 60px;
 	background: $bg-dark;
 }
 
+// Анимация в header
+
+.header__animation {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: $container-width;
+	height: 100%;
+	z-index: 1;
+}
+
+.header__leftBall {
+	position: absolute;
+	width: 818px;
+	height: 818px;
+	border-radius: 50%;
+	top: -15%;
+	left: -42%;
+	background: linear-gradient(306.14deg, #6C85FF 15.76%, rgba(255, 255, 255, 0) 84.22%), #A1A8FF;
+	opacity: 0.4;
+	box-shadow: 8px 12px 54px rgba(120, 108, 255, 0.5);
+	animation: headerLeftBall  28s infinite linear;
+}
+
+.header__rightBall {	
+	position: absolute;
+	width: 553px;
+	height: 553px;
+	border-radius: 50%;
+	bottom: -20%;
+	right: -35%;
+	background: linear-gradient(125.72deg, #23C2FF 19.79%, rgba(255, 255, 255, 0) 71.49%), rgba(80, 204, 255, 0.5);
+	opacity: 0.4;
+	box-shadow: 5px 25px 100px rgba(37, 143, 226, 0.85);
+	animation: headerRightBall  40s infinite linear;
+}
+
+.header__bottles {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: $container-width;
+	height: 100%;
+	z-index: 11;
+}
+
+.header__bottleWrapper1,
+.header__bottleWrapper2,
+.header__bottleWrapper3 {
+	position: absolute;
+
+	& img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	& img:hover {
+		cursor: pointer;
+		animation: shake  0.8s 1 linear;
+	}
+
+}
+
+.header__bottleWrapper1 {
+	// width: 240px;
+	width: 160px;
+	bottom: 28%;
+	left: 50px;
+}
+
+.header__bottleWrapper2 {
+	// width: 394px;
+    width: 180px;
+    bottom: 12%;
+    left: 64%;
+}
+
+.header__bottleWrapper3 {
+	// width: 189px;
+	width: 86px;
+    bottom: 43%;
+    right: 6%;
+}
+
+// Конец стилей анимации в header
+
+.header .container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
 .header__top {
 	position: relative;
+	z-index: 1000;
 	margin-bottom: 160px;
 }
 
@@ -327,6 +507,7 @@ a {
 
 .header__social {
 	position: absolute;
+	z-index: 200;
 	top: calc(251px - 60px);
 	right: 60px;
 	width: 34px;
@@ -360,9 +541,13 @@ a {
 // центральный блок
 
 .header__main {
+	position: relative;
+	z-index: 200;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	max-width: 770px;
+	margin: 0 auto 100px;
 	text-align: center;
 }
 
@@ -378,7 +563,6 @@ a {
 .header__subtitle {
 	width: 100%;
 	margin-bottom: 30px;
-	padding: 0 17.5%;
 }
 
 .header__btn {
@@ -396,15 +580,12 @@ a {
 // Калькулятор
 
 .header__calc {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
+	position: relative;
+	z-index: 10;
 	display: flex;
 	align-items: center;
-	width: 1173px;
-	height: 174px;
-	padding: 0	60px;
+	width: $container-width;
+	padding: 60px;
 	background: $bg-dark;
 }
 
@@ -511,54 +692,6 @@ a {
 		background-color: $bg-btn-light;
 	}
 }
-
-// Бутылки, шары и анимация
-
-// .header__bottles {
-// 	position: absolute;
-// 	// z-index: -1;
-// 	top: 0;
-// 	left: 0;
-// 	width: 100%;
-// 	height: 100%;
-// 	transform: translateX(-50%);
-// 	// margin: 0 auto;
-// }
-
-// .header__cont {
-// 	position: relative;
-// 	max-width: 1180px;
-// 	height: 100%;
-// 	margin: 0	auto;
-// }
-
-// .header__bottlewrapper1 {
-// 	position: absolute;
-// 	top: 50%;
-// 	// top: 354px;
-// 	left: 20px;
-// 	width: 146px;
-// }
-
-// .header__bottlewrapper2 {
-// 	position: absolute;
-// 	top: 34%;
-// 	right: 177px;
-// 	width: 240px;
-// }
-
-// .header__bottlewrapper3 {
-// 	position: absolute;
-// 	top: 40%;
-// 	right: 0;
-// 	width: 115px;
-// }
-
-// .header__bottles img {
-// 	display: block;
-// 	width: 100%;
-// 	height: auto;
-// }
 
 
 
@@ -935,13 +1068,7 @@ a {
 }
 
 .advantages__slider {
-	display: flex;
-	justify-content: space-between;
 	margin-bottom: 20px;
-}
-
-.advantages__sliderItem {
-	width: 29%;
 }
 
 .advantages__sliderLogo {
@@ -1097,7 +1224,7 @@ a {
 	text-align: left;
 }
 
-.minset__text {
+.minset__info {
 	text-align: left;
 }
 
