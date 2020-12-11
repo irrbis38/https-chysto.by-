@@ -26,7 +26,6 @@
   font-weight: 800;
   src: local("Gilroy Extrabold"), local("Gilroy-Extrabold"), url("../fonts/Gilroy-Extrabold.woff2") format("woff2"), url("../fonts/Gilroy-Extrabold.woff") format("woff");
 }
-/* ===== Определение переменных ===== */
 /* ===== Основные стили ===== */
 html {
   box-sizing: border-box;
@@ -285,7 +284,7 @@ a:focus {
 
 .header__social {
   position: absolute;
-  z-index: 200;
+  z-index: 300;
   top: 191px;
   right: 60px;
   width: 34px;
@@ -1159,6 +1158,13 @@ a:focus {
 
 .rightnow__btn {
   width: 100%;
+  color: #7892ff;
+  background-color: #fff;
+  transition: all 0.2s linear;
+}
+.rightnow__btn:active {
+  color: #7892ff;
+  background-color: #fff;
 }
 .rightnow__btn:hover, .rightnow__btn:focus {
   color: #fff;
@@ -1792,7 +1798,7 @@ a:focus {
     display: none;
   }
 
-  .body.lock {
+  body.lock {
     overflow: hidden;
   }
 
@@ -1852,32 +1858,31 @@ a:focus {
   }
 
   .header__menu {
+    padding-top: 114px;
     position: fixed;
-    top: -100%;
-    left: 0;
+    top: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
     background-color: #fff;
-    padding: 70px 10px 20px 10px;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
     z-index: 10000;
   }
 
   .header__menu.active {
-    top: 0;
+    left: 0;
     align-items: flex-start;
-    padding-top: 114px;
   }
-
-  .header__navbar {
+  .header__menu.active .header__navbar {
     display: block;
+    max-width: 50%;
   }
 
   .header__navLink {
     display: block;
     color: #4f4f4f;
     font-size: 16px;
-    margin: 0 0 27px 50px;
+    margin: 0 0 27px 60px;
     transition: all 0.5s;
   }
 
@@ -1963,6 +1968,7 @@ a:focus {
 
   .header__submit {
     width: 231px;
+    margin-bottom: 10px;
   }
 
   .header__animation {

@@ -49,7 +49,7 @@
 
 
 
-/* ===== Определение переменных ===== */
+// ===== Определение переменных =====
 
 // Шрифт
 $main-font: 'Gilroy',
@@ -390,7 +390,7 @@ a {
 
 .header__social {
 	position: absolute;
-	z-index: 200;
+	z-index: 300;
 	top: 251px - 60px;
 	right: 60px;
 	width: 34px;
@@ -1383,6 +1383,14 @@ a {
 
 .rightnow__btn {
 	width: 100%;
+	color: $light-btn;
+	background-color: $bg-btn-light;
+	transition: all .2s linear;
+
+	&:active {
+		color: $light-btn;
+		background-color: $bg-btn-light;
+	}
 	
 	&:hover,
 	&:focus {
@@ -2120,7 +2128,7 @@ font-weight: 700;
 		display: none;
 	}
 
-	.body.lock {
+	body.lock {
 		overflow: hidden;
 	}
 
@@ -2179,32 +2187,38 @@ font-weight: 700;
 	}
 
 	.header__menu {
+		
+		padding-top: 114px;
 		position: fixed;
-		top: -100%;
-		left: 0;
+		top: 0;
+		left: -100%;
 		width: 100%;
 		height: 100%;
 		background-color: #fff;
-		padding: 70px 10px 20px 10px;
-		transition: all .3s ease 0s;
+		// padding: 70px 10px 20px 10px;
+		transition: all .5s ease 0s;
 		z-index: 10000;
 	}
 
 	.header__menu.active {
-		top: 0;
+		left: 0;
 		align-items: flex-start;
-		padding-top: 114px;
+
+		& .header__navbar {
+			display: block;
+			max-width: 50%;
+		}
 	}
 
-	.header__navbar {
-		display: block;
-	}
+	// .header__navbar {
+	// 	display: block;
+	// }
 
 	.header__navLink {
 		display: block;
 		color: $dark-color;
 		font-size: 16px;
-		margin: 0 0 27px 50px;
+		margin: 0 0 27px 60px;
 		transition: all .5s;
 	}
 
@@ -2303,6 +2317,7 @@ font-weight: 700;
 
 	.header__submit {
 		width: 231px;
+		margin-bottom: 10px;
 	}
 
 

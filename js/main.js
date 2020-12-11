@@ -67,10 +67,14 @@ $(document).ready(function(){
 		$('body').toggleClass('lock');
 	});
 
-	$('.header__navLink, .header__menu').click(function(event) {
-		$('.header__menu').removeClass('active');
-		$('body').removeClass('lock');
-	});
+	// $('.header__menu').click(function(event) {
+	// 	$('.header__burger, .header__menu').removeClass('active');
+	// 	$('body').removeClass('lock');
+	// });
+
+
+
+
 
 
 
