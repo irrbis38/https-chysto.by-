@@ -258,10 +258,13 @@ a {
 		transition: all .2s linear;
 	}
 
-	&:hover::after,
-	&:focus::after {
+	&:hover::after {
 		opacity: 1;
 	}
+}
+
+.header__socialInBurger {
+	display: none;
 }
 
 .header__phone {
@@ -293,8 +296,7 @@ a {
 		transition: all .2s linear;
 	}
 
-	&:hover::after,
-	&:focus::after {
+	&:hover::after {
 		opacity: 1;
 	}
 }
@@ -303,44 +305,85 @@ a {
 
 .header__forHouse,
 .header__forOffice,
-.header__forCar {
+.header__forCar,
+.header__about {
 	position: absolute;
 	top: 40px;
 	left: 205px;
 	z-index: 100;
 	display: none;
 	padding: 60px 91px 60px 60px;
-	background: rgba(255, 255, 255, 0.77);
+	background: #e5edff;
 	backdrop-filter: blur(30px);
 	border-radius: 0px 0px 5px 5px;
 }
 
-.header__forHouse.active,
-.header__forOffice.active,
-.header__forCar.active {
+.header__forHouse.show,
+.header__forOffice.show,
+.header__forCar.show,
+.header__about.show {
 	display: flex;
 	justify-content: space-between;
 }
 
+.header__forHouseBack,
+.header__forOfficeBack,
+.header__forCarBack,
+.header__aboutBack {
+	position: absolute;
+	top: 60px;
+	left: 60px;
+	display: none;
+	cursor: pointer;
+
+	
+
+	& img {
+		display: inline-block;
+		margin-right: 20px;
+	}
+
+	& p {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 19px;
+		background: linear-gradient(97.4deg, #cca5ff 0%, #A1ABFF 48.96%, #60B4FF 100%), #C4C4C4;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: #CCA5FF;
+	}
+}
+
+
+.header__menuMobile {
+	display: none;
+}
+
 .header__menuItem {
 
-	&:nth-child(1) {
+	&:nth-child(2) {
 		max-width: 159px;
 		margin-right: 60px;
 	}
 
-	&:nth-child(2) {
+	&:nth-child(3) {
 		max-width: 220px;
 		margin-right: 50px;	
 	}
 
-	&:nth-child(3) {
+	&:nth-child(4) {
 		max-width: 189px;
 		margin-right: 0;
 	}
 }
 
-.header__firstMenuLink {
+.header__mobileBack {
+	display: none;
+}
+
+.header__firstMenuLink,
+.header__mobileLink {
 	display: block;	
 	color: $dark-color;
 	margin-bottom: 20px;
@@ -462,8 +505,7 @@ a {
 	background-color: $bg-btn-light;
 	transition: all .2s linear;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		color: $light-color;
 		background-color: $bg-btn-dark;
 	}
@@ -593,8 +635,7 @@ a {
 	background-color: $bg-btn-dark;
 	transition: all .2s linear;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		color: $light-btn;
 		background-color: $bg-btn-light;
 	}
@@ -1386,14 +1427,8 @@ a {
 	color: $light-btn;
 	background-color: $bg-btn-light;
 	transition: all .2s linear;
-
-	&:active {
-		color: $light-btn;
-		background-color: $bg-btn-light;
-	}
 	
-	&:hover,
-	&:focus {
+	&:hover {
 		color: $light-color;
 		background-color: $bg-btn-dark;
 	}
@@ -1526,6 +1561,17 @@ a {
 		left: 0;
 		right: 0;
 		bottom: 0;
+	}
+}
+
+.footer__socialPicWrapper {
+	width: 10px;
+	height: auto;
+
+	& img {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -2113,9 +2159,9 @@ font-weight: 700;
 	// Стили header для max-width 992px
 
 	.header {
-		// display: block;
 		height: 100vh;
 		min-height: 925px;
+		justify-content: flex-start;
 	}
 
 	.header__logo {
@@ -2195,9 +2241,9 @@ font-weight: 700;
 		width: 100%;
 		height: 100%;
 		background-color: #fff;
-		// padding: 70px 10px 20px 10px;
-		transition: all .5s ease 0s;
+		transition: all .3s ease 0s;
 		z-index: 10000;
+		overflow: auto;
 	}
 
 	.header__menu.active {
@@ -2210,36 +2256,92 @@ font-weight: 700;
 		}
 	}
 
-	// .header__navbar {
-	// 	display: block;
-	// }
-
 	.header__navLink {
 		display: block;
 		color: $dark-color;
 		font-size: 16px;
-		margin: 0 0 27px 60px;
+		margin: 0 0 28px 60px;
 		transition: all .5s;
+
+		&:last-child {
+			margin-bottom: 30px;
+		}
 	}
 
-	.header__forHouse {
+	.header__socialInBurger {
+		display: flex;
+		justify-content: flex-start;
+		margin-left: 60px;
+	}
+
+	.header__socialItemBurger {
+		position: relative;
+		width: 34px;
+		height: 34px;
+		margin-right: 20px;
+		border-radius: 50%;
+		background-color: $light-btn;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		& a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.header__socialPicWrapper {
+		max-width: 15px;
+		height: auto;
+
+		& img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.header__forHouse,
+	.header__forOffice,
+	.header__forCar,
+	.header__about {
 		position: fixed;
-		top: 200%;
-		left: 0;
+		top: 0;
+		left: -100%;
 		width: 100%;
-		height: 100%;
+		height: 100%;		
+		padding-top: 114px;
 		background-color: #fff;
-		// padding: 70px 10px 20px 10px;
-		transition: all .3s ease 0s;
+		transition: all .3s ease;
 		z-index: 10000;
 	}
 	
-	.header__forHouse.active {
-		top: 0;
+	.header__forHouse.active,
+	.header__forOffice.active,
+	.header__forCar.active,
+	.header__about.active {
+		left: 0;
 		align-items: flex-start;
-		padding-top: 114px;
 	}
 
+	.header__forHouseBack,
+	.header__forOfficeBack,
+	.header__forCarBack,
+	.header__aboutBack {
+		display: block;
+	}
+
+	.header__menuMobile {
+		display: none;
+	}
 
 	// Конец стилей burger-menu
 
@@ -2247,13 +2349,6 @@ font-weight: 700;
 	.header__phone {
 		right: 109px;
 	}
-
-
-// дописать стили выпадающего меня
-// и его подпунктов
-
-
-
 
 	.header__social {
 		display: none;
@@ -3350,6 +3445,109 @@ font-weight: 700;
 	.header__subtitle {
 		width: 100%;
 	}
+
+	// Выпадающее меню
+
+	.header__menu {
+		padding-top: 84px;
+	}
+
+	.header__navLink {
+		margin-left: 30px;
+	}
+
+	.header__socialInBurger {
+		margin-left: 30px;
+	}
+
+	.header__socialItemBurger {
+		position: relative;
+		width: 22px;
+		height: 22px;
+		margin-right: 17px;
+	}
+
+	.header__socialPicWrapper {
+		max-width: 10px;
+	}
+
+	.header__forHouse {
+		z-index: 30000;
+	}
+
+	.header__forHouse, .header__forOffice, .header__forCar, .header__about {
+		padding: 84px 91px 60px 30px;
+	}
+
+	.header__forHouseBack, .header__forOfficeBack, .header__forCarBack, .header__aboutBack {
+		top: 40px;
+		left: 30px;
+	}	
+
+	.header__menuMobile,
+	.forApartmentList,
+	.forHouseList,
+	.additionalList {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		display: block;	
+		padding-top: 84px;
+		padding-left: 30px;
+		background-color: #fff;
+		transition: all .3s ease;
+		z-index: 20000;
+	}
+
+	// .header__menuMobile {
+	// 	z-index: 20000;
+	// }
+
+	.header__menuItem:nth-child(1n+1) {
+		max-width: 100%;
+	}
+
+	.header__menuMobile.active  {
+		left: 0;
+		align-items: flex-start;
+	}
+
+	.header__menuItem.active {
+		left: 100%;
+		align-items: flex-start;
+	}
+
+	.header__mobileBack {
+		display: block;
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		cursor: pointer;		
+	
+		& img {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	
+		& p {
+			display: inline-block;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 19px;
+			background: linear-gradient(97.4deg, #cca5ff 0%, #A1ABFF 48.96%, #60B4FF 100%), #C4C4C4;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: #CCA5FF;
+		}
+	}
+
+	.header__firstMenuLink {
+		display: none;
+	}
+
+	// Конец стилей выпадающего меню
 
 
 

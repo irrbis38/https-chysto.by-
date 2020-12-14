@@ -26,33 +26,42 @@ var advantagesSwiper = new Swiper('.advantages__sliderWrapper', {
 $(document).ready(function(){
 
 
-	//Показ меню
+	//Показ меню для ширины экрана более 992px
 
 	$('#forHouse').click(function(event) {
-		$('.header__forHouse').toggleClass('active');
+		$('.header__forHouse').toggleClass('show');
 	});
 
 	$('#forOffice').click(function(event) {
-		$('.header__forOffice').toggleClass('active');
+		$('.header__forOffice').toggleClass('show');
 	});
 
 	$('#forCar').click(function(event) {
-		$('.header__forCar').toggleClass('active');
+		$('.header__forCar').toggleClass('show');
 	});
 
-	//Скрытие меню
+	$('#about').click(function(event) {
+		$('.header__about').toggleClass('show');
+	});
+
+	// Скрытие меню
 	
-	$('.header__forHouse, header__menuItem, .header__firstMenuLink, .header__menuLink, #forOffice, #forCar, #about, #price, #contacts').click(function(event) {
-		$('.header__forHouse').removeClass('active');
+	$('#forOffice, #forCar, #about, #price, #contacts').click(function(event) {
+		$('.header__forHouse').removeClass('show');
 	});
 	
-	$('.header__forOffice, header__menuItem, .header__firstMenuLink, .header__menuLink, #forHouse, #forCar, #about, #price, #contacts').click(function(event) {
-		$('.header__forOffice').removeClass('active');
+	$('#forHouse, #forCar, #about, #price, #contacts').click(function(event) {
+		$('.header__forOffice').removeClass('show');
 	});
 	
-	$('.header__forCar, header__menuItem, .header__firstMenuLink, .header__menuLink, #forHouse, #forOffice, #about, #price, #contacts').click(function(event) {
-		$('.header__forCar').removeClass('active');
+	$('#forHouse, #forOffice, #about, #price, #contacts').click(function(event) {
+		$('.header__forCar').removeClass('show');
 	});
+	
+	$('#forHouse, #forOffice, #forCar, #price, #contacts').click(function(event) {
+		$('.header__about').removeClass('show');
+	});
+
 
 	// удаление фокуса
 
@@ -60,17 +69,136 @@ $(document).ready(function(){
 		$('.header__navLink').blur();
 	});
 
-	// Бургер-меню
+	
+
+	// Меню для ширины экрана менее 992px
 
 	$('.header__burger').click(function(event) {
 		$('.header__burger, .header__menu').toggleClass('active');
+		$('.header__forHouse, .header__forOffice, .header__forCar, .header__about, .header__menuMobile, .header__menuItem').removeClass('active');
+		$('.header__forHouse, .header__forOffice, .header__forCar, .header__about').removeClass('show');
 		$('body').toggleClass('lock');
 	});
 
-	// $('.header__menu').click(function(event) {
-	// 	$('.header__burger, .header__menu').removeClass('active');
-	// 	$('body').removeClass('lock');
+
+
+	// Следующие уровни меню для экрана менее 992px
+
+	if (( $(window).width() < 992 ) && ( $(window).width() >= 576 )) {
+		$('#forHouse').click(function(event) {
+			$('.header__forHouse').addClass('active');	
+		});
+
+		$('.header__forHouseBack').click(function(event) {
+			$('.header__forHouse').removeClass('active');	
+		});
+	};
+
+	$(window).resize(function() {  
+		if (( $( this ).width() < 992) && ( $( this ).width() >= 576)) {
+			$('#forHouse').click(function(event) {
+				$('.header__forHouse').addClass('active');	
+			});
+	
+			$('.header__forHouseBack').click(function(event) {
+				$('.header__forHouse').removeClass('active');	
+			});
+		} else {
+			$('#forHouse').click(function(event) {
+				$('.header__forHouse').removeClass('active');
+			});
+		}
+	});
+
+	if ( $(window).width() < 576 ) {
+
+		// 2й уровень меню (для дома)
+		$('#forHouse').click(function(event) {
+			$('.header__menuMobile').addClass('active');	
+		});
+
+		$('.header__forHouseBack').click(function(event) {
+			$('.header__menuMobile').removeClass('active');	
+		});
+		
+		//3й уровень меню(для дома)
+		$('.forApartmentMobile').click(function(event) {
+			$('.forApartmentList').addClass('active');	
+		});	
+
+		$('.forHouseMobile').click(function(event) {
+			$('.forHouseList').addClass('active');	
+		});	
+
+		$('.additionalMobile').click(function(event) {
+			$('.additionalList').addClass('active');	
+		});
+
+		$('.header__mobileBack').click(function(event) {
+			$('.forApartmentList, .forHouseList, .additionalList').removeClass('active');	
+		});		
+	};
+
+	$(window).resize(function() {  
+		if ( $( this ).width() < 576) {
+			$('#forHouse').click(function(event) {
+				$('.header__menuMobile').addClass('active');	
+			});
+	
+			$('.header__forHouseBack').click(function(event) {
+				$('.header__menuMobile').removeClass('active');	
+			});
+		} else {
+			$('#forHouse').click(function(event) {
+				$('.header__menuMobile').removeClass('active');
+			});
+		}
+	});
+	
+
+
+	$('#forOffice').click(function(event) {
+		$('.header__forOffice').addClass('active');	
+	});
+
+	$('.header__forOfficeBack').click(function(event) {
+		$('.header__forOffice').removeClass('active');	
+	});
+
+	$('#forCar').click(function(event) {
+		$('.header__forCar').addClass('active');	
+	});
+
+	$('.header__forCarBack').click(function(event) {
+		$('.header__forCar').removeClass('active');	
+	});
+
+	$('#about').click(function(event) {
+		$('.header__about').addClass('active');	
+	});
+
+	$('.header__aboutBack').click(function(event) {
+		$('.header__about').removeClass('active');	
+	});
+
+//========================================
+	// if ( $(window).width() < 768 ) {
+	// 	$('.header__title').addClass('red');
+	// };
+			
+	// $(window).resize(function() {  
+	// 	if ( $( this ).width() < 768){
+	// 		$('.header__title').addClass('red');
+	// 	} else {
+	// 		$('.header__title').removeClass('red');
+	// 	}
 	// });
+
+//========================================
+
+
+
+
 
 
 
