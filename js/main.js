@@ -26,48 +26,158 @@ var advantagesSwiper = new Swiper('.advantages__sliderWrapper', {
 $(document).ready(function(){
 
 
-	//Показ меню для ширины экрана более 992px
+	//Выпадающее меню для ширины экрана более 992px
 
-	$('#forHouse').click(function(event) {
-		$('.header__forHouse').toggleClass('show');
+	const houseRemove = function forHouseRemoveShow(menuItem){
+		$(menuItem).removeClass('show');
+	};
+
+	let houseTimer;
+
+
+	/* === Работа меню "Для дома" === */
+
+	// Показ меню
+
+	$('#forHouse').mouseenter(function(event) {
+		$('.header__forHouse').addClass('show');
 	});
 
-	$('#forOffice').click(function(event) {
-		$('.header__forOffice').toggleClass('show');
+	// Запуск таймера при удалении курсора мыши с меню
+
+	$('#forHouse').mouseleave(function(event) {
+		houseTimer = setTimeout(function(){
+						houseRemove('.header__forHouse');
+					}, 500);
 	});
 
-	$('#forCar').click(function(event) {
-		$('.header__forCar').toggleClass('show');
+	// Сброс таймера при наведении на выпавшее меню
+
+	$('.header__forHouse').mouseenter(function(event) {
+		clearTimeout(houseTimer);
 	});
 
-	$('#about').click(function(event) {
-		$('.header__about').toggleClass('show');
-	});
+	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
 
-	// Скрытие меню
-	
-	$('#forOffice, #forCar, #about, #price, #contacts').click(function(event) {
+	$('.header__forHouse').mouseleave(function(event) {
 		$('.header__forHouse').removeClass('show');
 	});
-	
-	$('#forHouse, #forCar, #about, #price, #contacts').click(function(event) {
+
+	// И при наведении на другие пункты меню
+
+	$('#forOffice, #forCar, #about, #price, #contacts').mouseenter(function(event) {
+		$('.header__forHouse').removeClass('show');
+	});
+
+
+
+	/* === Работа меню "Для офиса" === */
+
+	// Показ меню
+
+	$('#forOffice').mouseenter(function(event) {
+		$('.header__forOffice').addClass('show');
+	});
+
+	// Запуск таймера при удалении курсора мыши с меню
+
+	$('#forOffice').mouseleave(function(event) {
+		houseTimer = setTimeout(function(){
+						houseRemove('.header__forOffice');
+					}, 500);
+	});
+
+	// Сброс таймера при наведении на выпавшее меню
+
+	$('.header__forOffice').mouseenter(function(event) {
+		clearTimeout(houseTimer);
+	});
+
+	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
+
+	$('.header__forOffice').mouseleave(function(event) {
 		$('.header__forOffice').removeClass('show');
 	});
-	
-	$('#forHouse, #forOffice, #about, #price, #contacts').click(function(event) {
+
+	// И при наведении на другие пункты меню
+
+	$('#forHouse, #forCar, #about, #price, #contacts').mouseenter(function(event) {
+		$('.header__forOffice').removeClass('show');
+	});
+
+
+
+	/* === Работа меню "Для авто" === */
+
+	// Показ меню
+
+	$('#forCar').mouseenter(function(event) {
+		$('.header__forCar').addClass('show');
+	});
+
+	// Запуск таймера при удалении курсора мыши с меню
+
+	$('#forCar').mouseleave(function(event) {
+		houseTimer = setTimeout(function(){
+						houseRemove('.header__forCar');
+					}, 500);
+	});
+
+	// Сброс таймера при наведении на выпавшее меню
+
+	$('.header__forCar').mouseenter(function(event) {
+		clearTimeout(houseTimer);
+	});
+
+	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
+
+	$('.header__forCar').mouseleave(function(event) {
 		$('.header__forCar').removeClass('show');
 	});
-	
-	$('#forHouse, #forOffice, #forCar, #price, #contacts').click(function(event) {
+
+	// И при наведении на другие пункты меню
+
+	$('#forHouse, #forOffice, #about, #price, #contacts').mouseenter(function(event) {
+		$('.header__forCar').removeClass('show');
+	});
+
+
+
+	/* === Работа меню "О компании" === */
+
+	// Показ меню
+
+	$('#about').mouseenter(function(event) {
+		$('.header__about').addClass('show');
+	});
+
+	// Запуск таймера при удалении курсора мыши с меню
+
+	$('#about').mouseleave(function(event) {
+		houseTimer = setTimeout(function(){
+						houseRemove('.header__about');
+					}, 500);
+	});
+
+	// Сброс таймера при наведении на выпавшее меню
+
+	$('.header__about').mouseenter(function(event) {
+		clearTimeout(houseTimer);
+	});
+
+	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
+
+	$('.header__about').mouseleave(function(event) {
 		$('.header__about').removeClass('show');
 	});
 
+	// И при наведении на другие пункты меню
 
-	// удаление фокуса
-
-	$('.header__navLink').click(function(event) {
-		$('.header__navLink').blur();
+	$('#forHouse, #forOffice, #forCar, #price, #contacts').mouseenter(function(event) {
+		$('.header__about').removeClass('show');
 	});
+
+	//============================================
 
 	
 
@@ -181,25 +291,30 @@ $(document).ready(function(){
 		$('.header__about').removeClass('active');	
 	});
 
-//========================================
-	// if ( $(window).width() < 768 ) {
-	// 	$('.header__title').addClass('red');
-	// };
-			
-	// $(window).resize(function() {  
-	// 	if ( $( this ).width() < 768){
-	// 		$('.header__title').addClass('red');
-	// 	} else {
-	// 		$('.header__title').removeClass('red');
-	// 	}
-	// });
 
 //========================================
 
 
 
 
+	/* === Счётчик для калькулятора заказа === */
 
+	let counter = $('.header__valueCounter').attr('value');
+		counter = counter*1;
+		
+	$('.header__increaseCount').click(function(event) {
+		if (counter < 990) {
+			counter += 10;
+			$('.header__valueCounter').attr('value', counter);
+		}			
+	});
+		
+	$('.header__decreaseCount').click(function(event) {
+		if (counter > 10) {
+			counter -= 10;
+			$('.header__valueCounter').attr('value', counter);
+		}			
+	});
 
 
 
@@ -316,13 +431,38 @@ $(document).ready(function(){
 		$('.fourth .minset__hide').addClass('hidden');
 	});
 
+
+	// Подстановка кода в поле телефона в header
+
+
+	$( '#headerPhone' ).focus(function() {	
+		$( '#headerPhone').attr('value', '+ 375 ');		
+	});
+
+	$( '#headerPhone' ).focusout(function() {		
+		$( '#headerPhone').removeAttr('value');		
+	});
+
+
+	// Подстановка кода в поле телефона в rightnow
+
+
+	$( '#rightnowPhone' ).focus(function() {	
+		$( '#rightnowPhone').attr('value', '+ 375 ');		
+	});
+
+	$( '#rightnowPhone' ).focusout(function() {		
+		$( '#rightnowPhone' ).removeAttr('value');		
+	});
+		
+
 });
 
 //Слайдер для services для max-width 767px
 
 var servicesSwiper = new Swiper('.services__container', {
 	loop: true,
-	slidesPerView: 1,
+	slidesPerView: 1.2,
 	grabCursor: true,
 	spaceBetween: 20
 });
@@ -341,7 +481,7 @@ window.addEventListener('resize', function() {
 
 var generalSwiper = new Swiper('.general__container', {
 	loop: true,
-	slidesPerView: 1,
+	slidesPerView: 1.2,
 	grabCursor: true,
 	spaceBetween: 20
 });

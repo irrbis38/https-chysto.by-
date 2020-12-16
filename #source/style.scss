@@ -313,9 +313,21 @@ a {
 	z-index: 100;
 	display: none;
 	padding: 60px 91px 60px 60px;
-	background: #e5edff;
+	background:rgba(255, 255, 255, 0.77);
 	backdrop-filter: blur(30px);
 	border-radius: 0px 0px 5px 5px;
+}
+
+.header__forOffice {
+	left: 345px;
+}
+
+.header__forCar {
+	left: 490px;
+}
+
+.header__about {
+	left: 620px;
 }
 
 .header__forHouse.show,
@@ -614,7 +626,8 @@ a {
 	}
 }
 
-.header__changeCount {
+.header__decreaseCount,
+.header__increaseCount {
 	width: 14px;
 	height: 14px;
 	cursor: pointer;
@@ -1054,7 +1067,7 @@ a {
 	&:first-child {
 		width: 54.23%;
 		margin-right: 5.08%;
-		padding: 60px 78px 55px;
+		padding: 60px 50px 55px;
 		box-shadow: 9px 9px 16px rgba(189, 196, 255, 0.25), -9px -9px 16px #FFFFFF;
 		border-radius: 5px;
 	}
@@ -1094,6 +1107,7 @@ a {
 	font-size: 16px;
 	line-height: 130%;
 	text-align: center;
+	// word-break: break-all;
 }
 
 .advantages__sliderNav {
@@ -1103,6 +1117,15 @@ a {
 
 .advantages__arrow {
 	cursor: pointer;
+	transition: all .3s linear;
+
+	&:hover svg {
+		fill: $bg-btn-dark;
+		& path {
+		stroke: $bg-btn-dark;
+		fill: $bg-btn-dark;
+		}
+	}
 
 	&:first-child {
 		margin-right: 13px;
@@ -1619,27 +1642,27 @@ font-weight: 700;
 
 /* ===== Анимационные эффекты ===== */
 
-// Движение левого шара в header
+// Первая анимация для шаров
 
 @keyframes firstBall {
 	0% {
 		transform: translate(0, 0);
 	}
 	25% {
-		transform: translate(5%, 10%);
+		transform: translate(7%, 12%);
 	}
 	50% {
-		transform: translate(0, 5%);
+		transform: translate(0, 7%);
 	}
 	75% {
-		transform: translate(5%, -5%);
+		transform: translate(7%, -7%);
 	}
 	100% {
 		transform: translate(0, 0);
 	}
 }
 
-// Движение правого шара в header
+// Вторая анимация для шаров
 
 @keyframes secondBall {
 	0% {
@@ -1674,6 +1697,26 @@ font-weight: 700;
 	}
 	100% {
 	transform:  translate(0, 0)  ;
+	}
+}
+
+// Третий вариант анимации для шаров
+
+@keyframes thirdBall {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(15%, 15%);
+	}
+	50% {
+		transform: translate(0, 10%);
+	}
+	75% {
+		transform: translate(12%, -12%);
+	}
+	100% {
+		transform: translate(0, 0);
 	}
 }
 
@@ -1777,7 +1820,7 @@ font-weight: 700;
 	left: -43%;
 	background: linear-gradient(306.14deg, #6C85FF 15.76%, rgba(255, 255, 255, 0) 84.22%), #A1A8FF;
 	box-shadow: 8px 12px 54px rgba(120, 108, 255, 0.5);
-	animation: firstBall  28s infinite linear;
+	animation: firstBall  23s infinite linear;
 }
 
 .header__rightBall {
@@ -1787,7 +1830,7 @@ font-weight: 700;
     right: -37%;
 	background: linear-gradient(125.72deg, #23C2FF 19.79%, rgba(255, 255, 255, 0) 71.49%), rgba(80, 204, 255, 0.5);
 	box-shadow: 5px 25px 100px rgba(37, 143, 226, 0.85);
-	animation: secondBall  60s infinite linear;
+	animation: secondBall  30s infinite linear;
 }
 
 // Шары в history
@@ -1811,7 +1854,7 @@ font-weight: 700;
 	background: linear-gradient(298.85deg, #42B8E6 13.9%, rgba(255, 255, 255, 0) 96%), rgba(80, 204, 255, 0.5);
 	box-shadow: 1px 6px 30px rgba(45, 170, 219, 0.7);
 	transform: rotate(-121.52deg);
-	animation: firstBall  15s infinite linear;
+	animation: thirdBall  20s infinite linear;
 }
 
 // Шары в principles
@@ -1824,7 +1867,7 @@ font-weight: 700;
 	background: linear-gradient(306.16deg, #7990FF 12.33%, rgba(255, 255, 255, 0) 84.99%), #A1A8FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
 	transform: rotate(75deg);
-	animation: firstBall  23s infinite linear;
+	animation: firstBall  15s infinite linear;
 }
 
 .principles__rightBall {
@@ -1834,7 +1877,7 @@ font-weight: 700;
 	right: -4%;
 	background: linear-gradient(137.59deg, #44A1FF 19.37%, rgba(255, 255, 255, 0) 73.7%), #68B3FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
-	animation: secondBall  32s infinite linear;
+	animation: secondBall  20s infinite linear;
 }
 
 // Шары в eco
@@ -1847,7 +1890,7 @@ font-weight: 700;
 	background: linear-gradient(306.16deg, #7D92F8 12.33%, rgba(255, 255, 255, 0) 84.99%), #A1A8FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
 	transform: rotate(-15deg);
-	animation: secondBall  45s infinite linear;
+	animation: secondBall  30s infinite linear;
 }
 
 .eco__rightTopBall {
@@ -1858,7 +1901,7 @@ font-weight: 700;
 	background: linear-gradient(306.16deg, #44A1FF 12.33%, rgba(255, 255, 255, 0) 84.99%), #68B3FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
 	transform: rotate(105deg);
-	animation: firstBall  28s infinite linear;
+	animation: firstBall  18s infinite linear;
 }
 
 .eco__rightBottomBall {
@@ -1882,7 +1925,7 @@ font-weight: 700;
 	background: linear-gradient(306.16deg, #748BFF 12.33%, rgba(255, 255, 255, 0) 84.99%), #A1A8FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
 	transform: rotate(-15deg);
-	animation: firstBall  25s infinite linear;
+	animation: firstBall  18s infinite linear;
 }
 
 .rightnow__rightTopBall {
@@ -1893,7 +1936,7 @@ font-weight: 700;
 	background: linear-gradient(306.16deg, #44A1FF 12.33%, rgba(255, 255, 255, 0) 84.99%), #68B3FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
 	transform: rotate(105deg);
-	animation: secondBall  28s infinite linear;
+	animation: secondBall  20s infinite linear;
 }
 
 .rightnow__rightBottomBall {
@@ -1904,7 +1947,7 @@ font-weight: 700;
 	background: linear-gradient(306.16deg, #44A1FF 12.33%, rgba(255, 255, 255, 0) 84.99%), #68B3FF;
 	box-shadow: 0px 4px 43px rgba(120, 108, 255, 0.25);
 	transform: rotate(105deg);
-	animation: firstBall  38s infinite linear;
+	animation: thirdBall  17s infinite linear;
 }
 
 
@@ -2051,6 +2094,7 @@ font-weight: 700;
 	.advantages__item {		
 
 		&:first-child {
+			width: 80%;
 			max-width: 640px;
 			margin: 0 auto 60px;
 		}
@@ -2319,7 +2363,7 @@ font-weight: 700;
 		width: 100%;
 		height: 100%;		
 		padding-top: 114px;
-		background-color: #fff;
+		background: rgba(255, 255, 255, 1);
 		transition: all .3s ease;
 		z-index: 10000;
 	}
@@ -2660,7 +2704,7 @@ font-weight: 700;
 	}
 
 	.advantages__item:first-child {
-		padding: 40px 54px;
+		padding: 40px 40px;
 	}
 
 
@@ -2942,7 +2986,8 @@ font-weight: 700;
 
 	}
 
-	.header__changeCount {
+	.header__decreaseCount,
+	.header__increaseCount {
 		& svg {
 			color: $dark-color;
 			fill: $dark-color;
@@ -3582,19 +3627,31 @@ font-weight: 700;
 
 	.additional__wrapper {
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.additional__item {
-		width: 100%;
+		width: 48%;
 		margin-right: 0;
+
+		&:nth-child(1),
+		&:nth-child(3) {
+			margin-right: 4%;
+		}
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			margin-bottom: 20px;
+		}
 	}
 
 	.additional__logo {
+		margin: 0 auto;
 		margin-bottom: 10px;
 	}
 
 	.additional__description {
-		max-width: 46.86%;
+		max-width: 100%;
 		margin: 0 auto 30px;
 	}
 

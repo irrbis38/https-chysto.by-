@@ -194,7 +194,7 @@
 						
 						<div class="header__menuItem">
 	
-							<a href="#" class="header__menuLink">Удаление вматин</a>
+							<a href="#" class="header__menuLink">Удаление вмятин</a>
 							<a href="#" class="header__menuLink">Защитное покрытие ЛКП</a>
 							<a href="#" class="header__menuLink">Химчистка салона</a>
 							<a href="#" class="header__menuLink">Полировка кузова</a>
@@ -319,17 +319,17 @@
 
 					<div class="header__counter">
 
-						<div class="header__changeCount">
+						<div class="header__decreaseCount">
 							<svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M1 1H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</div>
 
 						<div class="header__value">
-							<input type="text" value="40" maxlength="4" name="name">м<span>2</span>
+							<input type="text" value="40" maxlength="4" name="name" class="header__valueCounter">м<span>2</span>
 						</div>
 
-						<div class="header__changeCount">
+						<div class="header__increaseCount">
 							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								<path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -339,7 +339,7 @@
 					</div>
 
 					<div class="header__clientsNumber">
-						<input type="text" placeholder="+ 375 - XX - XXX - XX - XX" maxlength="30" name="phone">
+						<input type="tel" placeholder="+ 375 - XX - XXX - XX - XX" maxlength="30" name="phone" id="headerPhone" autocomplete="off">
 					</div>
 
 					<button class="header__submit btn" type="submit">РАССЧИТАТЬ</button>
@@ -848,11 +848,15 @@
 						<div class="advantages__sliderNav">
 
 							<div class="advantages__arrow slider__prev">
-								<img src="./img/advantages/prev.svg" alt="предыдущий">
+								<svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.320797 6.00703C0.321125 6.0067 0.321398 6.00632 0.321781 6.00599L6.03684 0.318496C6.46499 -0.107574 7.1575 -0.105988 7.58368 0.322215C8.00981 0.750363 8.00816 1.44287 7.58002 1.86899L3.74292 5.68749H26.9062C27.5103 5.68749 28 6.17716 28 6.78124C28 7.38532 27.5103 7.87499 26.9062 7.87499H3.74298L7.57996 11.6935C8.00811 12.1196 8.00975 12.8121 7.58363 13.2403C7.15745 13.6685 6.46488 13.67 6.03679 13.244L0.321726 7.55649C0.321398 7.55616 0.321125 7.55578 0.320742 7.55545C-0.107626 7.12791 -0.106258 6.43316 0.320797 6.00703Z" fill="#4F4F4F"/>
+								</svg>								
 							</div>
 
 							<div class="advantages__arrow slider__next">
-								<img src="./img/advantages/next.svg" alt="следующий">
+								<svg width="28" height="14" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M27.6792 6.00703C27.6789 6.0067 27.6786 6.00632 27.6782 6.00599L21.9632 0.318496C21.535 -0.107574 20.8425 -0.105988 20.4163 0.322215C19.9902 0.750363 19.9918 1.44287 20.42 1.86899L24.2571 5.68749H1.09375C0.489672 5.68749 0 6.17716 0 6.78124C0 7.38532 0.489672 7.87499 1.09375 7.87499H24.257L20.42 11.6935C19.9919 12.1196 19.9902 12.8121 20.4164 13.2403C20.8426 13.6685 21.5351 13.67 21.9632 13.244L27.6783 7.55649C27.6786 7.55616 27.6789 7.55578 27.6793 7.55545C28.1076 7.12791 28.1063 6.43316 27.6792 6.00703Z" fill="#4F4F4F"/>
+								</svg>
 							</div>
 
 						</div><!-- /.advantages__sliderNav -->
@@ -1090,7 +1094,7 @@
 						</div>
 
 						<div class="rigthnow__phone">
-							<input type="text" name="clientsPhone" placeholder="+ 375 - XX - XXX - XX - XX">
+							<input type="tel" name="clientsPhone" placeholder="+ 375 - XX - XXX - XX - XX" id="rightnowPhone" autocomplete="off">
 						</div>
 
 						<button class="rightnow__btn btn" type="submit">ОТПРАВИТЬ</button>
