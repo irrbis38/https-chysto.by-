@@ -6,6 +6,16 @@
 
 /* ===== Подключение шрифтов ===== */
 
+// Gilroy regular - 300
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Gilroy Regular'), local('Gilroy-Regular'),
+		url('../fonts/Gilroy-Light.woff2') format('woff2'),
+		url('../fonts/Gilroy-Light.woff') format('woff');
+}
+
 // Gilroy regular - 400
 @font-face {
 	font-family: 'Gilroy';
@@ -152,7 +162,8 @@ a {
 .block__text {
 	max-width: 950px;
 	margin: 0 auto 60px;
-	font-weight: 400;
+	font-weight: 300;
+	// font-weight: 400;
 	font-size: 16px;
 	line-height: 130%;
 	color: $dark-color;
@@ -301,7 +312,7 @@ a {
 	}
 }
 
-// Выпадающее меню
+/* ===== Выпадающее меню ===== */
 
 .header__forHouse,
 .header__forOffice,
@@ -441,7 +452,7 @@ a {
 	}
 }
 
-// Социальные сети
+/* ===== Социальные сети ===== */
 
 .header__social {
 	position: absolute;
@@ -476,7 +487,7 @@ a {
 	}
 }
 
-// центральный блок
+/* ===== Центральный блок первого экрана ===== */
 
 .header__main {
 	position: relative;
@@ -523,8 +534,7 @@ a {
 	}
 }
 
-
-// Калькулятор
+/* ===== Калькулятор ===== */
 
 .header__calc {
 	position: relative;
@@ -713,7 +723,8 @@ a {
 
 .about__desctiption {
 	color: $light-color;
-	font-weight: 400;
+	font-weight: 300;
+	// font-weight: 400;
 	line-height: 130%;
 }
 
@@ -1103,7 +1114,8 @@ a {
 }
 
 .advantages__sliderDescription {
-	font-weight: 400;
+	font-weight: 300;
+	// font-weight: 400;
 	font-size: 16px;
 	line-height: 130%;
 	text-align: center;
@@ -1623,7 +1635,8 @@ a {
 .footer__devCompany,
 .footer__politics,
 .footer__copyright {	
-	font-weight: 400;
+	font-weight: 300;
+	// font-weight: 400;
 	font-size: 14px;
 	line-height: 130%;
 	color: $light-color;
@@ -1642,7 +1655,7 @@ font-weight: 700;
 
 /* ===== Анимационные эффекты ===== */
 
-// Первая анимация для шаров
+/* ===== Первая анимация для шаров ===== */
 
 @keyframes firstBall {
 	0% {
@@ -1662,7 +1675,7 @@ font-weight: 700;
 	}
 }
 
-// Вторая анимация для шаров
+/* ===== Вторая анимация для шаров ===== */
 
 @keyframes secondBall {
 	0% {
@@ -1700,7 +1713,7 @@ font-weight: 700;
 	}
 }
 
-// Третий вариант анимации для шаров
+/* ===== Третяя анимация для шаров ===== */
 
 @keyframes thirdBall {
 	0% {
@@ -1720,7 +1733,8 @@ font-weight: 700;
 	}
 }
 
-// Анимация тряски
+/* ===== Анимация тряски ===== */
+
 @keyframes shake {
 	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
 	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
@@ -1739,7 +1753,7 @@ font-weight: 700;
 /*======= Применение анимации ======*/
 
 
-// Бутылки в header
+/* ===== бутылки в header ===== */
 
 .header__bottles {
 	position: absolute;
@@ -1789,8 +1803,7 @@ font-weight: 700;
 	right: 8%;
 }
 
-
-// Общие параметры шаров
+/* ===== Общие параметры шаров ===== */
 
 .header__animation,
 .history__animation,
@@ -1811,7 +1824,7 @@ font-weight: 700;
 	opacity: 0.4;
 }
 
-// Шары в header
+/* ===== Шары в header===== */
 
 .header__leftBall {
 	width: 818px;
@@ -1833,7 +1846,7 @@ font-weight: 700;
 	animation: secondBall  30s infinite linear;
 }
 
-// Шары в history
+/* ===== Шары в history===== */
 
 .history__leftBall {
 	width: 293px;
@@ -1857,7 +1870,7 @@ font-weight: 700;
 	animation: thirdBall  20s infinite linear;
 }
 
-// Шары в principles
+/* ===== Шары в principles===== */
 
 .principles__leftBall {
 	width: 245px;
@@ -1880,7 +1893,7 @@ font-weight: 700;
 	animation: secondBall  20s infinite linear;
 }
 
-// Шары в eco
+/* ===== Шары в eco ===== */
 
 .eco__leftBall {
 	width: 457px;
@@ -1915,7 +1928,7 @@ font-weight: 700;
 	animation: secondBall  38s infinite linear;
 }
 
-// Шары в rightnow
+/* ===== Шары в rightnow ===== */
 
 .rightnow__leftBall {
 	width: 321px;
@@ -1977,12 +1990,11 @@ font-weight: 700;
 
 /*======= Адаптивные стили ======*/
 
-
-// Стили для max-width 1199px
+/* ===== Стили для max-width 1199px ===== */
 
 @media (max-width: 1199px) {
 
-	// Общие стили для max-width 1199px
+	/* ===== Общие стили для max-width 1199px ===== */
 
 	.container {
 		width: 970px;
@@ -1992,8 +2004,7 @@ font-weight: 700;
 		height: 46px;
 	}
 
-
-	// Стили header для max-width 1199px
+	/* ===== Стили header для max-width 1199px ===== */
 
 	.header {
 		min-height: 658px;
@@ -2054,8 +2065,7 @@ font-weight: 700;
 	}
 
 
-
-	// Стили about для max-width 1199px
+	/* ===== Стили about для max-width 1199px ===== */
 
 	.about__logo {
 		width: 88px;
@@ -2068,23 +2078,21 @@ font-weight: 700;
 	}
 
 
-
-
-	// Стили history для max-width 1199px
+	/* ===== Стили history для max-width 1199px ===== */
 
 	.history__imgWrapper {
 		margin-right: 5.62%;
 	}
 
 
-	// Стили principles для max-width 1199px
+	/* ===== Стили principles для max-width 1199px ===== */
 
 	.principles__imgWrapper {
 		margin-right: 5.62%;
 	}
 
 
-	// Стили advantages для max-width 1199px
+/* ===== Стили advantages для max-width 1199px ===== */
 
 	.advantages__wrapper {
 		flex-wrap: wrap;
@@ -2114,17 +2122,16 @@ font-weight: 700;
 	}
 
 
-	// Стили rightnow для max-width 1199px
+	/* ===== Стили rightnow для max-width 1199px ===== */
 
 	.rightnow__item:first-child {
 		width: 45.45%;
 		margin-right: 6.47%;
 	}
 
+	/* ===== Анимация для max-width 1199px ===== */
 
-	// Анимация для max-width 1199px
-
-	// Бутылки в header
+	/* ===== Бутылки в header ===== */
 	
 	.header__bottleWrapper1 {
 		width: 83px;
@@ -2144,7 +2151,7 @@ font-weight: 700;
 		right: 13%;
 	}
 
-	// Шары в header
+	/* ===== Шары в header ===== */
 
 	.header__leftBall {
 		width: 412px;
@@ -2172,12 +2179,11 @@ font-weight: 700;
 
 
 
-
-// Стили для max-width 992px
+/* ===== Стили для max-width 992px ===== */
 
 @media (max-width: 991px) {
 
-	// Общие стили для max-width 992px
+	/* ===== Общие стили для max-width 992px ===== */
 
 	.container {
 		width: 720px;
@@ -2199,8 +2205,7 @@ font-weight: 700;
 		margin: 0 auto 40px;
 	}
 
-
-	// Стили header для max-width 992px
+	/* ===== Стили header для max-width 992px ===== */
 
 	.header {
 		height: 100vh;
@@ -2387,7 +2392,7 @@ font-weight: 700;
 		display: none;
 	}
 
-	// Конец стилей burger-menu
+	/* ===== Конец стилей burger-menu ===== */
 
 
 	.header__phone {
@@ -2460,9 +2465,7 @@ font-weight: 700;
 	}
 
 
-
-	// Анимация для 768
-
+	/* ===== Анимация для 768 ===== */
 	
 	.header__animation {
 		display: none;
@@ -2502,7 +2505,7 @@ font-weight: 700;
 	}
 	
 
-	// Стили about для max-width 992px
+	/* ===== Стили about для max-width 992px ===== */
 
 	.about {
 		padding: $block-padding-tablet;
@@ -2535,7 +2538,7 @@ font-weight: 700;
 	}
 		
 
-	// Стили history для max-width 992px
+	/* ===== Стили history для max-width 992px ===== */
 
 	.history {
 		padding: $block-padding-tablet;
@@ -2560,8 +2563,7 @@ font-weight: 700;
 	}
 
 			
-
-	// Стили services для max-width 992px
+	/* ===== Стили services для max-width 992px ===== */
 
 	.services {
 		padding: $block-padding-tablet;
@@ -2603,7 +2605,7 @@ font-weight: 700;
 
 			
 
-	// Стили additional для max-width 992px
+	/* ===== Стили additional для max-width 992px ===== */
 
 	.additional {
 		padding: $block-padding-tablet;
@@ -2615,7 +2617,7 @@ font-weight: 700;
 
 	
 
-	// Стили principles для max-width 992px
+	/* ===== Стили principles для max-width 992px ===== */
 
 	.principles {
 		padding: $block-padding-tablet;
@@ -2647,7 +2649,7 @@ font-weight: 700;
 
 
 
-	// Стили general для max-width 992px
+	/* ===== Стили general для max-width 992px ===== */
 	
 	.general {
 		padding: $block-padding-tablet;
@@ -2683,7 +2685,7 @@ font-weight: 700;
 
 
 
-	// Стили advantages для max-width 992px
+	/* ===== Стили advantages для max-width 992px ===== */
 
 	.advantages {
 		padding: $block-padding-tablet;
@@ -2709,7 +2711,7 @@ font-weight: 700;
 
 
 
-	// Стили eco для max-width 992px
+	/* ===== Стили eco для max-width 992px ===== */
 
 	.eco {
 		padding: $block-padding-tablet;
@@ -2746,7 +2748,7 @@ font-weight: 700;
 
 
 
-	// Стили minset для max-width 992px
+	/* ===== Стили minset для max-width 992px ===== */
 
 	.minset {
 		padding: $block-padding-tablet;
@@ -2786,7 +2788,7 @@ font-weight: 700;
 
 
 
-	// Стили order для max-width 992px
+	/* ===== Стили order для max-width 992px ===== */
 	
 	.order {
 		padding: $block-padding-tablet;
@@ -2810,8 +2812,7 @@ font-weight: 700;
 	}
 
 
-
-	// Стили rightnow для max-width 992px
+	/* ===== Стили rightnow для max-width 992px ===== */
 
 	.rightnow {
 		padding: $block-padding-tablet;
@@ -2841,8 +2842,7 @@ font-weight: 700;
 	}
 
 
-
-	// Стили footer для max-width 992px
+	/* ===== Стили footer для max-width 992px ===== */
 
 	.footer {
 		padding: $block-padding-tablet;
@@ -2891,11 +2891,12 @@ font-weight: 700;
 
 
 
-// Стили для max-width 768px
+/* ===== Стили для max-width 768px ===== */
 
 @media (max-width: 767px) {
 
-	// Общие стили для для max-width 768px
+	/* ===== Общие стили для для max-width 768px ===== */
+
 
 	.container {
 		width: 540px;
@@ -2912,7 +2913,7 @@ font-weight: 700;
 
 
 
-	// Стили header для max-width 768px
+	/* ===== Стили header для max-width 768px ===== */
 
 	.header {
 		height: auto;
@@ -2977,7 +2978,8 @@ font-weight: 700;
 	.header__counter input,
 	.header__clientsNumber input {
 		line-height: 130%;
-		font-weight: 400;
+		font-weight: 300;
+		// font-weight: 400;
 		color: $dark-color;
 	}
 	
@@ -3005,7 +3007,7 @@ font-weight: 700;
 
 
 
-	// Стили about для max-width 768px
+	/* ===== Стили about для max-width 768px ===== */
 
 	.about {
 		padding: $block-padding-phone;
@@ -3017,7 +3019,7 @@ font-weight: 700;
 
 
 
-	// Стили history для max-width 768px
+	/* ===== Стили history для max-width 768px ===== */
 
 	.history {
 		padding: $block-padding-phone;
@@ -3087,7 +3089,7 @@ font-weight: 700;
 
 
 
-	// Стили services для max-width 768px
+	/* ===== Стили services для max-width 768px ===== */
 
 	.services {
 		padding: $block-padding-phone;
@@ -3131,7 +3133,7 @@ font-weight: 700;
 
 
 
-	// Стили additional для max-width 768px
+	/* ===== Стили additional для max-width 768px ===== */
 
 	.additional {
 		padding: $block-padding-phone;
@@ -3176,7 +3178,8 @@ font-weight: 700;
 
 
 
-	// Стили principles для max-width 768px
+	/* ===== Стили principles для max-width 768px
+ ===== */
 
 	.principles {
 		padding: $block-padding-phone;
@@ -3206,7 +3209,7 @@ font-weight: 700;
 	
 
 
-	// Стили general для max-width 768px
+	/* ===== Стили general для max-width 768px ===== */
 
 	.general {
 		padding: $block-padding-phone;
@@ -3241,7 +3244,7 @@ font-weight: 700;
 
 
 
-	// Стили advantages для max-width 768px
+	/* ===== Стили advantages для max-width 768px ===== */
 
 	.advantages {
 		padding: $block-padding-phone;
@@ -3272,7 +3275,7 @@ font-weight: 700;
 
 
 
-	// Стили eco для max-width 768px
+	/* ===== Стили eco для max-width 768px ===== */
 
 	.eco {
 		padding: $block-padding-phone;
@@ -3316,7 +3319,7 @@ font-weight: 700;
 
 
 
-	// Стили minset для max-width 768px
+	/* ===== Стили minset для max-width 768px ===== */
 
 	.minset {
 		padding: $block-padding-phone;
@@ -3345,7 +3348,7 @@ font-weight: 700;
 
 
 
-	// Стили order для max-width 768px
+	/* ===== Стили order для max-width 768px ===== */
 
 	.order {
 		padding: $block-padding-phone;
@@ -3366,7 +3369,7 @@ font-weight: 700;
 
 
 
-	// Стили rightnow для max-width 768px
+	/* ===== Стили rightnow для max-width 768px ===== */
 
 	.rightnow {
 		padding: $block-padding-phone;
@@ -3374,7 +3377,7 @@ font-weight: 700;
 
 
 
-	// Стили footer для max-width 768px
+	/* ===== Стили footer для max-width 768px ===== */
 
 	.footer {
 		padding: $block-padding-phone;
@@ -3388,7 +3391,7 @@ font-weight: 700;
 
 
 
-	// Стили табов для всех блоков
+	/* ===== Стили табов для всех блоков ===== */
 
 	
 	.history__show,
@@ -3460,12 +3463,11 @@ font-weight: 700;
 
 
 
-
-// Стили для max-width 575px
+/* ===== Стили для max-width 575px ===== */
 
 @media (max-width: 575px) {
 
-	// Общие стили для max-width 575px
+	/* ===== Общие стили для max-width 575px ===== */
 
 	.container {
 		width: 100%;
@@ -3475,7 +3477,7 @@ font-weight: 700;
 
 
 
-	// Стили header для max-width 575px
+	/* ===== Стили header для max-width 575px ===== */
 
 	.header__logo {
 		width: 82px;
@@ -3491,7 +3493,7 @@ font-weight: 700;
 		width: 100%;
 	}
 
-	// Выпадающее меню
+	/* ===== Выпадающее меню ===== */
 
 	.header__menu {
 		padding-top: 84px;
@@ -3592,11 +3594,11 @@ font-weight: 700;
 		display: none;
 	}
 
-	// Конец стилей выпадающего меню
+	/* ===== Конец стилей выпадающего меню ===== */
 
 
 
-	// Стили about для max-width 575px
+	/* ===== Стили about для max-width 575px ===== */
 
 	.about__title,
 	.about__text,
@@ -3623,7 +3625,7 @@ font-weight: 700;
 
 
 
-	// Стили additional для max-width 575px
+	/* ===== Стили additional для max-width 575px ===== */
 
 	.additional__wrapper {
 		flex-wrap: wrap;
@@ -3661,7 +3663,7 @@ font-weight: 700;
 
 
 
-	// Стили minset для max-width 575px
+	/* ===== Стили minset для max-width 575px ===== */
 	
 	.minset__picWrapper {
 		width: 36.5%;
@@ -3675,7 +3677,7 @@ font-weight: 700;
 
 
 
-	// Стили footer для max-width 575px
+	/* ===== Стили footer для max-width 575px ===== */
 
 	.footer__infoWrapper {
 		display: block;
@@ -3717,8 +3719,7 @@ font-weight: 700;
 
 
 
-
-// Стили для max-width 340px
+/* ===== Стили для max-width 340px ===== */
 
 @media (max-width: 340px) {
 
