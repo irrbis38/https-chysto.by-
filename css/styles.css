@@ -773,6 +773,7 @@ a:focus {
   margin: auto;
   border-radius: 50%;
   background: #7892ff;
+  background: linear-gradient(97.4deg, #CCA5FF 0%, #A1ABFF 48.96%, #60B4FF 100%), #C4C4C4;
   animation-name: bounce;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -872,6 +873,7 @@ a:focus {
 
 .sk-double-bounce .sk-double-bounce-2 {
   animation-delay: -1s;
+  background-color: #D0DEFF;
 }
 
 @keyframes sk-double-bounce {
@@ -939,7 +941,7 @@ a:focus {
 .sk-three-bounce .sk-child {
   width: 26.5px;
   height: 26.5px;
-  background-color: #7892FF;
+  background-color: #B2AEFF;
   border-radius: 100%;
   display: inline-block;
   animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
@@ -1029,6 +1031,7 @@ a:focus {
   top: auto;
   bottom: 0;
   animation-delay: -1s;
+  background-color: #B2AEFF;
 }
 
 @keyframes sk-chasing-dots-rotate {
