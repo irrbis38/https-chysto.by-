@@ -45,17 +45,17 @@ $(document).ready(function(){
 
 	// Запуск таймера при удалении курсора мыши с меню
 
-	$('#forHouse').mouseleave(function(event) {
-		houseTimer = setTimeout(function(){
-						houseRemove('.header__forHouse');
-					}, 500);
-	});
+	// $('#forHouse').mouseleave(function(event) {
+	// 	houseTimer = setTimeout(function(){
+	// 					houseRemove('.header__forHouse');
+	// 				}, 500);
+	// });
 
 	// Сброс таймера при наведении на выпавшее меню
 
-	$('.header__forHouse').mouseenter(function(event) {
-		clearTimeout(houseTimer);
-	});
+	// $('.header__forHouse').mouseenter(function(event) {
+	// 	clearTimeout(houseTimer);
+	// });
 
 	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
 
@@ -81,17 +81,17 @@ $(document).ready(function(){
 
 	// Запуск таймера при удалении курсора мыши с меню
 
-	$('#forOffice').mouseleave(function(event) {
-		houseTimer = setTimeout(function(){
-						houseRemove('.header__forOffice');
-					}, 500);
-	});
+	// $('#forOffice').mouseleave(function(event) {
+	// 	houseTimer = setTimeout(function(){
+	// 					houseRemove('.header__forOffice');
+	// 				}, 500);
+	// });
 
 	// Сброс таймера при наведении на выпавшее меню
 
-	$('.header__forOffice').mouseenter(function(event) {
-		clearTimeout(houseTimer);
-	});
+	// $('.header__forOffice').mouseenter(function(event) {
+	// 	clearTimeout(houseTimer);
+	// });
 
 	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
 
@@ -117,17 +117,17 @@ $(document).ready(function(){
 
 	// Запуск таймера при удалении курсора мыши с меню
 
-	$('#forCar').mouseleave(function(event) {
-		houseTimer = setTimeout(function(){
-						houseRemove('.header__forCar');
-					}, 500);
-	});
+	// $('#forCar').mouseleave(function(event) {
+	// 	houseTimer = setTimeout(function(){
+	// 					houseRemove('.header__forCar');
+	// 				}, 500);
+	// });
 
 	// Сброс таймера при наведении на выпавшее меню
 
-	$('.header__forCar').mouseenter(function(event) {
-		clearTimeout(houseTimer);
-	});
+	// $('.header__forCar').mouseenter(function(event) {
+	// 	clearTimeout(houseTimer);
+	// });
 
 	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
 
@@ -153,17 +153,17 @@ $(document).ready(function(){
 
 	// Запуск таймера при удалении курсора мыши с меню
 
-	$('#about').mouseleave(function(event) {
-		houseTimer = setTimeout(function(){
-						houseRemove('.header__about');
-					}, 500);
-	});
+	// $('#about').mouseleave(function(event) {
+	// 	houseTimer = setTimeout(function(){
+	// 					houseRemove('.header__about');
+	// 				}, 500);
+	// });
 
 	// Сброс таймера при наведении на выпавшее меню
 
-	$('.header__about').mouseenter(function(event) {
-		clearTimeout(houseTimer);
-	});
+	// $('.header__about').mouseenter(function(event) {
+	// 	clearTimeout(houseTimer);
+	// });
 
 	// Скрытие выпавшего меню при удалении курсора мыши с выпавшего меню
 
